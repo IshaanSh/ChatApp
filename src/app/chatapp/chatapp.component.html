@@ -1,0 +1,79 @@
+<!-- <router-outlet></router-outlet> -->
+
+<div class="nav">
+  <img src="../../assets/icons8-chat-room-64.png" style="margin-left: 5rem" />
+  <i class="fas fa-chevron-down"></i>
+  <i class="fas fa-bell">
+    <i class="fas fa-circle"></i>
+  </i>
+  <button mat-raised-button color="warn" (click)="login()" style="float: right; margin-top: 20px; margin-right: 10px;">
+    Logout</button>
+</div>
+<div class="container">
+  <div class="chats">
+    <div class="chat-nav">
+      <p class="header">
+        Chats &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+
+        {{logInUserName}}
+        <button mat-raised-button color="primary" style="width: 15%;" (click)="openDialog()">New Group</button>
+      </p>
+    </div>
+    <div class="group-list">
+      <h1 style="color: blue; margin-left: 30%;" *ngIf="!contactList.length && !userDetails.length">No Active User</h1>
+      <mat-selection-list  [multiple]="false" *ngIf="this.display || this.displayUser">
+        <mat-card class="card" *ngIf="this.display">
+          <mat-list-option *ngFor="let contact of contactList" [value]="contact" (click)="onSelect(contact) ">
+            {{contact?.roomName}}
+          </mat-list-option>
+        </mat-card>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <mat-card   class="card" *ngIf="this.displayUser">
+          <ng-container>
+            <mat-list-option *ngFor="let item of userDetails" [value]="item" (click)="selectUserHandler(item)">
+              {{item.name}}
+            </mat-list-option>
+          </ng-container>
+        </mat-card>
+      </mat-selection-list>
+    </div>
+  </div>
+
+  <div class="image1" *ngIf="!this.show">
+    <img src="../../assets/3040791.jpg" style="height: 99.5vh; width: 85rem;" >
+  </div>
+
+  <form *ngIf="show" [formGroup]="chatForm">
+
+    <div class="chat-container" style="overflow-y: scroll;">
+      <div class="chat-room" style="max-height: 560px; ">
+        <div class="chatroom-nav">
+          <img src="../../assets/avatar 2.jpeg" style="width: 50px; height: 50px;">
+          <p class="Title" style="margin-top: 5px;">{{chatData?.roomName || chatData?.name}}</p>
+          <div>
+            <i class="fas fa-user-plus"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
+        <p class="msgMain" *ngFor="let item of messageArray" [ngClass]="item.name=== newUserName ?'right': 'left'">
+          <span>{{item.name}}</span>
+          <span class="msg">
+            <app-read-more [content]="item.message" [limit]="300" [completeWords]="true" *ngIf="item?.message.length>20 ">
+            </app-read-more>
+            <div *ngIf="item?.message.length<=20 ">
+              {{item?.message }}
+            </div>
+          </span>
+        </p>
+      </div>
+      <div class="chat-bar">
+        <span class="text-container">
+          <input class="editable" contenteditable="true" placeholder="Write new message" formControlName="message"
+            (keyup)="$event.keyCode == 13 && submitMessage()"  />
+        </span>
+        <mat-icon *ngIf="this.chatForm.valid">send</mat-icon>
+      </div>
+    </div>
+  </form>
+</div>

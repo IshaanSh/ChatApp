@@ -1,0 +1,47 @@
+.icon {
+  display: flex;
+  justify-content: flex-end;
+  margin: -10px;
+  .mat-icon{
+    font-size: 30px;
+    color: red;
+  }
+}
+.room {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 20px;
+  label {
+    font-weight: 700;
+  }
+  button {
+    width: 200px;
+    margin: auto;
+    background-color: greenyellow;
+    color: black;
+    padding: 5px 10px;
+    font-size: 20px;
+    &:disabled{
+      cursor: not-allowed;
+    }
+  }
+}
+::ng-deep .mat-dialog-container{
+// border: 3px solid #9155fd;
+// border-radius: px;
+}
+.error-block {
+  height: 2rem;
+  // margin: 5%;
+  display: flex;
+  justify-content: center;
+
+  .error-message {
+    font-weight: 500;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,AAAA,SAAS,CAAA;EAChB,gBAAgB,EAAE,UAAU;EAC5B,KAAK,EAAE,KAAK;CACb",
+    "sources": [
+        "sanckbar.component.scss"
+    ],
+    "names": [],
+    "file": "sanckbar.component.css"
+}

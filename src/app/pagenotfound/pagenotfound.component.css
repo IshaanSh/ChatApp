@@ -1,0 +1,51 @@
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  font-size: large;
+}
+
+button {
+  width: 13%;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 43%;
+  padding: 5px;
+  font-size: 18px;
+  border-radius: 5px;
+  background: linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%);
+  border: none;
+  margin-top: 124px;
+  margin-bottom: 20px;
+  width: 241px;
+  height: 58px;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.no-data {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
+.no-data .no-data-text {
+  font-size: 26px;
+  text-shadow: 0px 0px 68px #0000008c;
+  font-weight: 500;
+  padding: 10px;
+}
+/*# sourceMappingURL=pagenotfound.component.css.map */

@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body {
+  background-color: #fff;
+  font-family: Montserrat;
+  overflow-x: hidden;
+}
+
+article,
+aside,
+details,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  text-decoration: none;
+}
+
+img {
+  border: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.bg-illustration {
+  position: relative;
+  height: 100vh;
+  width: 1194px;
+  background: url("../../assets/wallpaperflare.com_wallpaper\ \(3\).jpg") no-repeat center center scroll;
+  background-size: cover;
+  float: left;
+  -webkit-animation: bgslide 2.3s forwards;
+  animation: bgslide 2.3s forwards;
+}
+.bg-illustration img {
+  width: 248px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: auto;
+  margin: 19px 0 0 25px;
+}
+
+@-webkit-keyframes bgslide {
+  from {
+    left: -100%;
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    width: 1194px;
+    opacity: 1;
+  }
+}
+
+@keyframes bgslide {
+  from {
+    left: -100%;
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    width: 1194px;
+    opacity: 1;
+  }
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 100%;
+
+  .content {
+    // @include edgy-boxes;
+    display: grid;
+    grid-template-columns: 76%;
+    justify-content: center;
+    // line-height: 4;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      // color: $main-color;
+      font-weight: 500;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      // color: $main-color;
+      font-weight: 400;
+    }
+
+    .error-trigger {
+      color: red;
+    }
+    .normal {
+      // color:$main-color;
+    }
+
+    ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+      // color: $main-color;
+    }
+
+    ::ng-deep .mat-form-field-label {
+      // color: $main-color  !important;
+      // color: $mainColor!important;
+    }
+
+    .forget-pass {
+      display: flex;
+      justify-content: flex-end;
+
+      p {
+        cursor: pointer;
+        margin: 0px !important;
+        // color: $main-color;
+      }
+    }
+
+    mat-checkbox {
+      // color: $main-color;
+
+      ::ng-deep .mat-checkbox-frame {
+        // border-color: $main-color;
+      }
+    }
+
+    mat-form-field {
+      button {
+        border: none;
+        background-color: white;
+      }
+
+      mat-icon {
+        // color: $main-color;
+      }
+    }
+
+    .submit-but {
+      margin-top: 7rem;
+      display: flex;
+      justify-content: center;
+
+      button {
+        background: -webkit-linear-gradient(110deg, #f794a4 0%, #fdd6bd 100%);
+        background: -o-linear-gradient(110deg, #f794a4 0%, #fdd6bd 100%);
+        background: linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%);
+        border: none;
+        margin-top: 124px;
+        margin-bottom: 20px;
+        width: 241px;
+        height: 58px;
+        text-transform: uppercase;
+        color: white;
+        border-radius: 10px;
+        position: relative;
+        z-index: 2;
+        font-weight: bold;
+        font-size: 20px;
+        &:disabled {
+          cursor: not-allowed;
+          background: gray;
+        }
+      }
+
+
+    }
+
+    .error-block {
+      height: 2rem;
+      // margin: 5%;
+      display: flex;
+      justify-content: center;
+
+      .error-message {
+        font-weight: 500;
+        color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    margin-top: 5vh;
+    height: 45vh;
+
+    .content {
+      .submit-but {
+        margin-top: 3rem;
+      }
+    }
+  }
+}
+
+
+.bg-illustration .burger-btn span:nth-child(1) {
+  width: 37px;
+}
+.bg-illustration .burger-btn span:nth-child(2) {
+  width: 28px;
+}
+.bg-illustration .burger-btn span:nth-child(3) {
+  width: 20px;
+}
+

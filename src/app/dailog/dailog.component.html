@@ -1,0 +1,31 @@
+<form [formGroup]="roomForm" class="room" >
+<div class="icon">
+  <mat-icon (click)="crossClick()">cancel</mat-icon>
+  </div>
+    <label >Enter Room Name</label>
+    <mat-form-field appearance="outline">
+      <input matInput formControlName="roomName" placeholder="Room Name" required maxlength="25">
+      <mat-error *ngIf="roomForm?.controls?.roomName?.errors?.required">Please enter the Room Name</mat-error>
+      <mat-error *ngIf="roomForm?.controls?.roomName?.errors?.pattern">*spaces not allowed</mat-error>
+  </mat-form-field>
+    <button mat-raised-button (click)="onConfirmClick()">Submit</button>
+  </form>
+
+  <!-- <mat-form-field appearance="outline">
+  </mat-form-field>
+  <ng-container *ngIf="roomForm?.get('roomName')?.touched">
+    <p [ngClass]="roomForm?.get('roomName')?.errors &&
+    roomForm.get('roomName')?.touched ? 'error-trigger' : 'normal'"></p>
+
+  </ng-container>
+  <div class="error-block">
+    <div>
+        <div class="error-message" *ngIf=" roomForm?.get('roomName')?.touched && roomForm.get('roomName')?.value == ''">
+
+            <mat-icon>warning</mat-icon>
+            Please Enter the required field <br>
+        </div>
+        <br>
+
+    </div>
+</div> -->
